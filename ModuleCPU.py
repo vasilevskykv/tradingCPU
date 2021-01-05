@@ -87,6 +87,8 @@ print('Total time of fitting on CPU: ', total_time)
 
 for x, y in val_data_multi.take(3):
     pred = multi_step_model.predict(x)[0]
+    
+pred = pred*data_std[0]+data_mean[0]
 
 print("PREDICTIONS FOR PLOTTING: ")
 print(pred)
